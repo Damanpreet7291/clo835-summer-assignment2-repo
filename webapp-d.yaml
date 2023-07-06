@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: employees
+        version: v1
+    spec:
+      containers:
+      - name: webapp
+        image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-v1.1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DBHOST
+          value: mysql-service.sqldb.svc.cluster.local
+        - name: DBPORT
+          value: "3306"
+        - name: DBPWD
+          value: db_pass123
+        command: ["python3", "app.py"]

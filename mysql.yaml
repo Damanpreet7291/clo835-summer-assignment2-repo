@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: daman-mysql-db
+  namespace: sqldb
+spec:
+  containers:
+  - name: daman-mysql
+    image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-sql-repo:mysql-v5.7
+    ports:
+    - containerPort: 3306
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: db_pass123
+  imagePullSecrets:
+      - name: regcred    
