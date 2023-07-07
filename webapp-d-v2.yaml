@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-202307051737
+        image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-202307070303
         ports:
         - containerPort: 8080
         env:

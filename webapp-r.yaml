@@ -19,12 +19,12 @@ spec:
     spec:
       containers:
       - name: webapp-v1
-        image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-v1.1
+        image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-202307070303
         ports:
         - containerPort: 8080
         env:
         - name: DBHOST
-          value: mysql-service.sqldb.svc.cluster.local
+          value: 10.0.244.7
         - name: DBPORT
           value: "3306"
         - name: DBPWD

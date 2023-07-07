@@ -5,7 +5,7 @@ metadata:
   namespace: webapp   
 spec:
   containers:
-  - image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-v1.1
+  - image: 492401058894.dkr.ecr.us-east-1.amazonaws.com/daman-app-repo:application-202307070303
     name: webapp-v1
     ports:
     - containerPort: 8080
